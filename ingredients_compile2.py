@@ -5,9 +5,10 @@ data = pd.read_json('result2.json')
 #print type(data)
 #print data.head()
 
-recipes = pd.read_json('recipe.json')
+recipes = pd.read_json('cook_ndtv/recipe_op.json')
 #print recipes.shape
 ingredient_cols = recipes['ingredients']
+# print ingredient_cols
 fin_arr = []
 left_out = []
 j=0
@@ -19,20 +20,23 @@ for col in ingredient_cols:
 
 for row in data.iterrows():
 	ing = row[1][0]
+	# print ing
 	temp_arr = []
 	temp_arr.append(ing)
 	j=0
 	for col in ingredient_cols:
 		for i in col:
+			i = i.lower()
 			if i.find(ing) != -1:
 				temp_arr.append(j)
 				break
 		k = 0
 		for i in col:
+			i = i.lower()
 			if i.find(ing) != -1:
 				left_out[j][k]+=1;
 				#print ingredient_cols[j][k]
-				k+=1
+			k+=1
 		j+=1
 	if len(temp_arr)!=1:
 		fin_arr.append(temp_arr)
@@ -56,4 +60,4 @@ for i in left_out:
 print count
 print total
 with open('result_combined.json', 'w') as fp:
-    json.dump(fin_arr, fp)
+	json.dump(fin_arr, fp)
