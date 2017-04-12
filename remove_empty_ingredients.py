@@ -11,5 +11,5 @@ for row in ip:
 	row['ingredients'] = li
 
 
-with open('result_.json', 'w') as f:
+with open('result_without_empty.json', 'w') as f:
 	json.dump(ip, f)
