@@ -1,5 +1,8 @@
 # RecipeWebApplication
 
+### categories.json
+Unique categories in the recipe dataset
+
 ### final_recipe.json
 Final recipe data with clean ingredients and index
 
