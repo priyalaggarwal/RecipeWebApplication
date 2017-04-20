@@ -12,14 +12,6 @@
 
     <title>Kitchen Ninja</title>
 <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
-		<!-- GOOGLE FONTS : end -->
-        <link rel="stylesheet" type="text/css" href="jquery.steps.css">
-		<link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="default.css">
-        <link rel="stylesheet" type="text/css" href="base.css">
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-    <!-- Bootstrap Core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -40,6 +32,191 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="jquery-ui.css">
+	<link rel="stylesheet" href="style.css">
+	
+<style>
+.tags {
+
+    display: inline-block;  
+  height: 21px;  
+  margin: 0 10px 0 0;  
+  padding: 0 30px 0 14px;  
+  white-space: nowrap;  
+  position: relative;  
+  
+  background: -moz-linear-gradient(top, #fed970 0%, #febc4a 100%);  
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fed970), color-stop(100%,#febc4a));  
+  background: -webkit-linear-gradient(top, #fed970 0%,#febc4a 100%);  
+  background: -o-linear-gradient(top, #fed970 0%,#febc4a 100%);  
+  background: linear-gradient(to bottom, #fed970 0%,#febc4a 100%);  
+  background-color: #FEC95B;  
+  
+  color: #963;  
+  font: bold 11px/21px Arial, Tahoma, sans-serif;  
+  text-decoration: none;  
+  text-shadow: 0 1px rgba(255,255,255,0.4);  
+  
+  border-top: 1px solid #EDB14A;  
+  border-bottom: 1px solid #CE922E;  
+  border-right: 1px solid #DCA03B;  
+  border-radius: 1px 3px 3px 1px;  
+  box-shadow: inset 0 1px #FEE395, 0 1px 2px rgba(0,0,0,0.21);  
+}
+.tags:before { 
+  content: '';  
+  position: absolute;  
+  top: 4px;  
+  left: -6px;  
+  width: 10px;  
+  height: 10px;  
+  
+  background: -moz-linear-gradient(45deg, #fed970 0%, #febc4a 100%);  
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fed970), color-stop(100%,#febc4a));  
+  background: -webkit-linear-gradient(-45deg, #fed970 0%,#febc4a 100%);  
+  background: -o-linear-gradient(45deg, #fed970 0%,#febc4a 100%);  
+  background: linear-gradient(135deg, #fed970 0%,#febc4a 100%);  
+  background-color: #FEC95B;  
+  
+  border-left: 1px solid #EDB14A;  
+  border-bottom: 1px solid #CE922E;  
+  border-radius: 0 0 0 2px;  
+  box-shadow: inset 1px 0 #FEDB7C, 0 2px 2px -2px rgba(0,0,0,0.33);  
+  -webkit-transform: scale(1, 1.5) rotate(45deg);  
+  -moz-transform: scale(1, 1.5) rotate(45deg);  
+  -ms-transform: scale(1, 1.5) rotate(45deg);  
+  transform: scale(1, 1.5) rotate(45deg);  
+}  
+.tags:after { 
+  content: '';  
+  position: absolute;  
+  top: 7px;  
+  left: 1px;  
+  width: 5px;  
+  height: 5px;  
+  background: #FFF;  
+  border-radius: 4px;  
+  border: 1px solid #DCA03B;  
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.21);  
+}  
+.tags:hover { 
+  color: #FFF;  
+  text-shadow: -1px -1px 0 rgba(153,102,51,0.3);  
+}  
+.tags .delete {
+
+    display: block;
+
+    width: 20px;
+
+    height: inherit;
+
+    float: right;
+
+    background: rgba(255, 255, 255, 0.5) url('Images/delete.png') center no-repeat;
+
+    margin-left: 6px;
+
+    border-left: 1px solid #ccc;
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+}         
+.modal-body {
+    
+    box-shadow:         0 1px 5px #000;
+    -moz-box-shadow:    0 1px 5px #000;
+    -o-box-shadow:      0 1px 5px #000;
+    -webkit-box-shadow: 0 1px 5px #000;
+    
+    height: 100%;
+    width: 100%;
+}
+.search_text {
+
+    height: 100%;
+
+    border-radius: 2px;
+
+
+    box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    margin-bottom: 20px;
+
+    width: 95%;
+
+
+    margin:10%;
+}
+.search_text .tag_list {
+    background: transparent;
+    background: rgba(163, 135, 106, 0.15);
+    background-clip: padding-box;
+    
+    border: none;
+    border-radius:         26px;
+    -moz-border-radius:    26px;
+    -o-border-radius:      26px;
+    -webkit-border-radius: 26px;
+    
+    box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    -o-box-shadow:      inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    
+    height: 50px;
+    color: #ffffff;
+    outline: none;
+    padding-left: 20px;
+    transition:         all .1s linear;
+    -moz-transition:    all .1s linear;
+    -o-transition:      all .1s linear;
+    -webkit-transition: all .1s linear;
+    font: 400 14px/18px 'Sanchez';
+    width: 95%;
+    margin-bottom:20px;
+}
+
+.text_search .tag_list:focus {
+    background: transparent;
+    background: rgba(163, 135, 106, 0.2);
+
+    box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+    -o-box-shadow:      inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+}
+</style>
 </head>
 
 <body id="page-top" class="index">
@@ -458,7 +635,7 @@
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
     <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="search" tabindex="-1" role="dialog" aria-hidden="true" style="height=50%;margin:10%;">
+    <div class="portfolio-modal modal fade" id="search" tabindex="-1" role="dialog" aria-hidden="true" style="height=100%;margin:5%;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -471,92 +648,10 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
-                                
-		    <!-- BANNER : begin -->
-		    <div id="banner" style="height:400px;">
-
-			    <!-- BANNER BG : begin -->
-			    <div class="banner-bg" style="height:400px;">
-				    <div class="banner-bg-item"></div>
-			    </div>
-			    <!-- BANNER BG : end -->
-
-			    <!-- BANNER SEARCH : begin -->
-			    <div class="banner-search">
-				    <div class="container">
-					    <div class="banner-search-inner">
-						    <ul class="custom-list tab-title-list clearfix">
-							    <li class="tab-title active"><a>Search By Name</a></li>
-							    <li class="tab-title"><a>Search By Ingredients</a></li>
-						    </ul>
-						    <ul class="custom-list tab-content-list">
-
-							    <!-- Search By Name : begin -->
-							    <li class="tab-content active searchbyname">
-								    <form class="default-form">
-
-									    <!-- SEARCH INPUT : begin -->
-									    <span class="search-input">
-										    <input id = "autoComplete" type="text" placeholder="Search by Name">
-									    </span>
-									    <!-- SEARCH INPUT : end -->
-
-								    </form>
-							    </li>
-							    <!-- Search By Name : end -->
-
-							    <!-- Search By Course : begin -->
-							    <li class="tab-content">
-								    <form class="search-form default-form" method='GET' action="/books/search/">
-
-									    <!-- SEARCH INPUT : begin -->
-									    <span class="search-input">
-										    <input name="college" id = "college-autoComplete" type="text" placeholder="College" state='0'>
-									    </span>
-									    <!-- SEARCH INPUT : end -->
-
-									    <!-- SEARCH INPUT : begin -->
-									    <span class="search-input">
-										    <input name="branch" id = "branch-autoComplete" type="text" placeholder="Branch">
-									    </span>
-									    <!-- SEARCH INPUT : end -->
-
-									    <!-- SEARCH INPUT : begin -->
-									    <span class="select-box" title="Semester">
-										    <select name="semester" data-placeholder="Semester">
-											    <option value="all">All Semesters</option>
-											    <option value="1">1</option>
-											    <option value="2">2</option>
-											    <option value="3">3</option>
-											    <option value="4">4</option>
-											    <option value="5">5</option>
-                                                <option value="6">6</option>
-											    <option value="7">7</option>
-											    <option value="8">8</option>
-										    </select>
-									    </span>
-									    <!-- SEARCH INPUT : end -->
-
-									    <!-- SUBMIT : begin -->
-									    <span class="submit-btn">
-										    <button type="submit" class="button"><i class="fa fa-search"></i> Search</button>
-									    </span>
-									    <!-- SUBMIT : end -->
-
-								    </form>
-							    </li>
-							    <!-- Search By Course : end -->
-
-						    </ul>
-					    </div>
-				    </div>
-			    </div>
-			    <!-- BANNER SEARCH : end -->
-
-		    </div>
-		    <!-- BANNER : end -->
-
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>GO!</button>
+                                    <div class="search_text">
+                                        <input type="text" placeholder="Search Ingredients" class="tag_list" id="tag_list1">
+                                    </div>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">PROCEED!</button>
                             </div>
                         </div>
                     </div>
@@ -707,7 +802,72 @@
             </div>
         </div>
     </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script type="text/javascript">
+    $( function() {
+                                                var availableTags = [
+                                                    "ActionScript",
+                                                    "AppleScript",
+                                                    "Asp",
+                                                    "BASIC",
+                                                    "C",
+                                                    "C++",
+                                                    "Clojure",
+                                                    "COBOL",
+                                                    "ColdFusion",
+                                                    "Erlang",
+                                                    "Fortran",
+                                                    "Groovy",
+                                                    "Haskell",
+                                                    "Java",
+                                                    "JavaScript",
+                                                    "Lisp",
+                                                    "Perl",
+                                                    "PHP",
+                                                    "Python",
+                                                    "Ruby",
+                                                    "Scala",
+                                                    "Scheme"
+                                                ];
+                                                $( "#tag_list1" ).autocomplete({
+                                                    source: availableTags
+                                                });
+    });
+    $(document).on('keydown', '#tag_list1', function (e) {
 
+        if (e.keyCode == 13) {
+
+            createTag($(this).val());
+
+        }
+
+    });
+
+    $(document).on('click', '.delete', function () {
+
+        $(this).parent().remove();
+
+    });
+
+     
+
+    function createTag(text) {
+
+        if (text != '') {
+
+            var tag = $('<div class="tags">' + text + '<a class="delete"></a></div>');
+
+
+            tag.insertAfter($('#tag_list1'), $('#tag_list1'));
+
+            $('#tag_list1').val('');
+
+        }
+
+    }
+
+    </script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
