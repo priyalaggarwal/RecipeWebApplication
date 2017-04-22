@@ -1,0 +1,288 @@
+<html>
+    <head>
+        
+        <title></title>
+        <base target="_parent">
+        {% load static %}
+        <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+        <link href="{% static "css/FirstPageCSS.css" %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static "css/jquery-ui.css" %}" type="text/css" media="all" />
+<style>
+.tags {
+
+    display: inline-block;  
+  height: 21px;  
+  margin: 0 10px 0 0;  
+  padding: 0 30px 0 14px;  
+  white-space: nowrap;  
+  position: relative;  
+  
+  background: -moz-linear-gradient(top, #fed970 0%, #febc4a 100%);  
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fed970), color-stop(100%,#febc4a));  
+  background: -webkit-linear-gradient(top, #fed970 0%,#febc4a 100%);  
+  background: -o-linear-gradient(top, #fed970 0%,#febc4a 100%);  
+  background: linear-gradient(to bottom, #fed970 0%,#febc4a 100%);  
+  background-color: #FEC95B;  
+  
+  color: #963;  
+  font: bold 11px/21px Arial, Tahoma, sans-serif;  
+  text-decoration: none;  
+  text-shadow: 0 1px rgba(255,255,255,0.4);  
+  
+  border-top: 1px solid #EDB14A;  
+  border-bottom: 1px solid #CE922E;  
+  border-right: 1px solid #DCA03B;  
+  border-radius: 1px 3px 3px 1px;  
+  box-shadow: inset 0 1px #FEE395, 0 1px 2px rgba(0,0,0,0.21);  
+}
+.tags:before { 
+  content: '';  
+  position: absolute;  
+  top: 5px;  
+  left: -6px;  
+  width: 10px;  
+  height: 10px;  
+  
+  background: -moz-linear-gradient(45deg, #fed970 0%, #febc4a 100%);  
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fed970), color-stop(100%,#febc4a));  
+  background: -webkit-linear-gradient(-45deg, #fed970 0%,#febc4a 100%);  
+  background: -o-linear-gradient(45deg, #fed970 0%,#febc4a 100%);  
+  background: linear-gradient(135deg, #fed970 0%,#febc4a 100%);  
+  background-color: #FEC95B;  
+  
+  border-left: 1px solid #EDB14A;  
+  border-bottom: 1px solid #CE922E;  
+  border-radius: 0 0 0 2px;  
+  box-shadow: inset 1px 0 #FEDB7C, 0 2px 2px -2px rgba(0,0,0,0.33);  
+  -webkit-transform: scale(1, 1.5) rotate(45deg);  
+  -moz-transform: scale(1, 1.5) rotate(45deg);  
+  -ms-transform: scale(1, 1.5) rotate(45deg);  
+  transform: scale(1, 1.5) rotate(45deg);  
+}  
+.tags:after { 
+  content: '';  
+  position: absolute;  
+  top: 7px;  
+  left: 1px;  
+  width: 5px;  
+  height: 5px;  
+  background: #FFF;  
+  border-radius: 4px;  
+  border: 1px solid #DCA03B;  
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.21);  
+}  
+.tags:hover { 
+  color: #FFF;  
+  text-shadow: -1px -1px 0 rgba(153,102,51,0.3);  
+}  
+.tags .delete {
+
+    display: block;
+
+    width: 20px;
+
+    height: inherit;
+
+    float: right;
+
+    background: rgba(255, 255, 255, 0.5) url("{% static 'Images/delte.png' %}") center no-repeat;
+
+    margin-left: 6px;
+
+    border-left: 1px solid #ccc;
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+}         
+body {
+   background: url("{% static 'Images/backsearch.jpg' %}") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    
+    box-shadow:         0 1px 5px #000;
+    -moz-box-shadow:    0 1px 5px #000;
+    -o-box-shadow:      0 1px 5px #000;
+    -webkit-box-shadow: 0 1px 5px #000;
+    
+    height: 395px;
+    width: 720px;
+}
+.search_text {
+
+    height: 100%;
+
+    border-radius: 2px;
+
+
+    box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    margin-bottom: 20px;
+
+    width: 95%;
+
+
+    margin:10%;
+}
+
+.search_text .tag_list {
+    background: transparent;
+    background: rgba(163, 135, 106, 0.15);
+    background-clip: padding-box;
+    
+    border: none;
+    border-radius:         26px;
+    -moz-border-radius:    26px;
+    -o-border-radius:      26px;
+    -webkit-border-radius: 26px;
+    
+    box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    -o-box-shadow:      inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                        0 1px 0 rgba(255, 255, 255, 0.5), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(255, 255, 255, 0.3);
+    
+    color: #ffffff;
+    height: 50px;
+    outline: none;
+    
+    transition:         all .1s linear;
+    -moz-transition:    all .1s linear;
+    -o-transition:      all .1s linear;
+    -webkit-transition: all .1s linear;
+    font: 400 14px/18px 'Sanchez';
+    width: 100%;
+    margin-top:10%;
+    padding-left:20px;
+    margin-bottom:20px;
+}
+
+.text_search .tag_list:focus {
+    background: transparent;
+    background: rgba(163, 135, 106, 0.2);
+
+    box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+    -o-box-shadow:      inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2), 
+                        0 1px 0 rgba(255, 255, 255, 0.7), 
+                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
+                        0 0 40px rgba(255, 255, 255, 0.5);
+}
+</style>
+    </head>
+    <body>
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" /> -->
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script> -->
+        
+        
+        <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/jquery-ui.min.js" %}"></script>
+        
+    <form action="/recipe_listing" id="search_form">
+        <div class="search_text">
+          <!-- <input id="recipes" > -->
+          <input type="text" placeholder="Search Ingredients" class="tag_list" id="tag_list1">
+          <center><input type="submit" value="PROCEED!" class="btn btn-primary btn-lg " data-dismiss="modal" id="submit_button"></center>
+        </div>
+        
+        <!-- <input type="button" class="btn btn-primary" data-dismiss="modal">PROCEED!</button> -->
+        <!-- <input type="submit" value="Search" id="submit_button"> -->
+     </form> 
+        <p id="demo"></p>
+        
+        <script>
+        ing = new Array()
+
+        $(function() {
+          $("#tag_list1").autocomplete({
+            source: "/api/get_ingredients/",
+            minLength: 2,
+          });
+        });
+
+        $(document).on('keydown', '#tag_list1', function (e) {
+
+            if (e.keyCode == 13) {
+
+                createTag($(this).val());
+
+            }
+
+        });
+
+        $(document).on('click', '.delete', function () {
+
+            $(this).parent().remove();
+
+        });
+
+
+        function createTag(text) {
+
+            if (text != '') {
+
+                var tag = $('<div class="tags">' + text + '<a class="delete"></a></div>');
+
+                ing.push(text);
+                tag.insertAfter($('#tag_list1'), $('#tag_list1'));
+
+                $('#tag_list1').val('');
+            }
+
+            // document.getElementById("demo").innerHTML = ing;
+
+        }
+
+        $('#submit_button').on('click', function() {
+
+         $.ajax({
+                type: 'POST',
+                url: "/selected_ingredients/",
+                data: {'ingredients[]': ing},
+            // success: function(data, textStatus, jqXHR){
+            //     console.log(jqXHR.status);
+            //     window.location.href= url;
+            // }
+        });
+        });
+
+        $('#search_form').on('keyup keypress', function(e) {
+          var keyCode = e.keyCode || e.which;
+          if (keyCode === 13) { 
+            e.preventDefault();
+            return false;
+          }
+        });
+        </script>
+
+    </body>
+</html>

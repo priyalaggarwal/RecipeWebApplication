@@ -68,6 +68,7 @@ def index(request):
 	request.session['ingredient_list'] = []
 	return render(request, 'recipe_app/index.html')
 
+
 def get_ingredients(request):
     if request.is_ajax():
         q = request.GET.get('term', '')
