@@ -1,0 +1,16 @@
+<html>
+<body>
+{% load static %}
+<ul type="none">
+	{% for recipe in recipes %}
+		<li>  
+			<a href={% url 'recipe_app:recipe_detail' id=recipe.id %}> <img height= "20%" width="10%" src="{% static 'Images/'|add:recipe.image_path %} "> </a><br>
+			<a href={% url 'recipe_app:recipe_detail' id=recipe.id %}> {{ recipe.name }} </a>
+			<br> {{ recipe.description }}
+			<br> Ingredients Matched: {{ recipe.no_matched }}
+		</li>
+
+	{% endfor %}
+</ul>
+</body>
+</html>

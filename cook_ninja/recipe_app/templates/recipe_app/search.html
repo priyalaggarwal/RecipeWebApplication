@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="jquery-ui.css">
+<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" /> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script> -->
+
+</head>
+
+
+<body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <div class="search_text"> -->
+<div class="ui-widget">
+        <input type="text" placeholder="Search Ingredients" class="tag_list" id="tag_list1">
+</div>
+
+<p id="demo"></p>
+
+
+<script type="text/javascript">
+// $( function() {
+// var availableTags=[];
+// var xmlhttp = new XMLHttpRequest();
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         availableTags = JSON.parse(this.responseText);
+//          $( "#tag_list1" ).autocomplete({
+//             source: availableTags
+//          });
+//     }
+// };
+// xmlhttp.open("GET", "result2.txt", true);
+// xmlhttp.send();                                     
+// });
+
+
+$(function() {
+  $("#tag_list").autocomplete({
+    source: "/api/get_recipes/",
+    minLength: 2,
+  });
+});
+
+$(document).on('keydown', '#tag_list1', function (e) {
+
+    if (e.keyCode == 13) {
+
+        createTag($(this).val());
+
+    }
+
+});
+
+$(document).on('click', '.delete', function () {
+
+    $(this).parent().remove();
+
+});
+
+ 
+
+function createTag(text) {
+
+    if (text != '') {
+
+        var tag = $('<div class="tags">' + text + '<a class="delete"></a></div>');
+
+
+        tag.insertAfter($('#tag_list1'), $('#tag_list1'));
+
+        $('#tag_list1').val('');
+
+    }
+
+}
+</script>
+</body>
+
+
+
+</html>
