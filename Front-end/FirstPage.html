@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,192 +30,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
     <![endif]-->
-
-    <link rel="stylesheet" href="jquery-ui.css">
-	<link rel="stylesheet" href="style.css">
-	
-<style>
-.tags {
-
-    display: inline-block;  
-  height: 21px;  
-  margin: 0 10px 0 0;  
-  padding: 0 30px 0 14px;  
-  white-space: nowrap;  
-  position: relative;  
-  
-  background: -moz-linear-gradient(top, #fed970 0%, #febc4a 100%);  
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fed970), color-stop(100%,#febc4a));  
-  background: -webkit-linear-gradient(top, #fed970 0%,#febc4a 100%);  
-  background: -o-linear-gradient(top, #fed970 0%,#febc4a 100%);  
-  background: linear-gradient(to bottom, #fed970 0%,#febc4a 100%);  
-  background-color: #FEC95B;  
-  
-  color: #963;  
-  font: bold 11px/21px Arial, Tahoma, sans-serif;  
-  text-decoration: none;  
-  text-shadow: 0 1px rgba(255,255,255,0.4);  
-  
-  border-top: 1px solid #EDB14A;  
-  border-bottom: 1px solid #CE922E;  
-  border-right: 1px solid #DCA03B;  
-  border-radius: 1px 3px 3px 1px;  
-  box-shadow: inset 0 1px #FEE395, 0 1px 2px rgba(0,0,0,0.21);  
-}
-.tags:before { 
-  content: '';  
-  position: absolute;  
-  top: 4px;  
-  left: -6px;  
-  width: 10px;  
-  height: 10px;  
-  
-  background: -moz-linear-gradient(45deg, #fed970 0%, #febc4a 100%);  
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fed970), color-stop(100%,#febc4a));  
-  background: -webkit-linear-gradient(-45deg, #fed970 0%,#febc4a 100%);  
-  background: -o-linear-gradient(45deg, #fed970 0%,#febc4a 100%);  
-  background: linear-gradient(135deg, #fed970 0%,#febc4a 100%);  
-  background-color: #FEC95B;  
-  
-  border-left: 1px solid #EDB14A;  
-  border-bottom: 1px solid #CE922E;  
-  border-radius: 0 0 0 2px;  
-  box-shadow: inset 1px 0 #FEDB7C, 0 2px 2px -2px rgba(0,0,0,0.33);  
-  -webkit-transform: scale(1, 1.5) rotate(45deg);  
-  -moz-transform: scale(1, 1.5) rotate(45deg);  
-  -ms-transform: scale(1, 1.5) rotate(45deg);  
-  transform: scale(1, 1.5) rotate(45deg);  
-}  
-.tags:after { 
-  content: '';  
-  position: absolute;  
-  top: 7px;  
-  left: 1px;  
-  width: 5px;  
-  height: 5px;  
-  background: #FFF;  
-  border-radius: 4px;  
-  border: 1px solid #DCA03B;  
-  box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.21);  
-}  
-.tags:hover { 
-  color: #FFF;  
-  text-shadow: -1px -1px 0 rgba(153,102,51,0.3);  
-}  
-.tags .delete {
-
-    display: block;
-
-    width: 20px;
-
-    height: inherit;
-
-    float: right;
-
-    background: rgba(255, 255, 255, 0.5) url('Images/delete.png') center no-repeat;
-
-    margin-left: 6px;
-
-    border-left: 1px solid #ccc;
-
-    position: absolute;
-
-    top: 0;
-
-    right: 0;
-
-}         
-.modal-body {
-    
-    box-shadow:         0 1px 5px #000;
-    -moz-box-shadow:    0 1px 5px #000;
-    -o-box-shadow:      0 1px 5px #000;
-    -webkit-box-shadow: 0 1px 5px #000;
-    
-    height: 100%;
-    width: 100%;
-}
-.search_text {
-
-    height: 100%;
-
-    border-radius: 2px;
-
-
-    box-sizing: border-box;
-
-    -moz-box-sizing: border-box;
-
-    margin-bottom: 20px;
-
-    width: 95%;
-
-
-    margin:10%;
-}
-.search_text .tag_list {
-    background: transparent;
-    background: rgba(163, 135, 106, 0.15);
-    background-clip: padding-box;
-    
-    border: none;
-    border-radius:         26px;
-    -moz-border-radius:    26px;
-    -o-border-radius:      26px;
-    -webkit-border-radius: 26px;
-    
-    box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.1), 
-                        0 1px 0 rgba(255, 255, 255, 0.5), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
-                        0 0 40px rgba(255, 255, 255, 0.3);
-    -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0, 0.1), 
-                        0 1px 0 rgba(255, 255, 255, 0.5), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
-                        0 0 40px rgba(255, 255, 255, 0.3);
-    -o-box-shadow:      inset 0 0 5px rgba(0, 0, 0, 0.1), 
-                        0 1px 0 rgba(255, 255, 255, 0.5), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
-                        0 0 40px rgba(255, 255, 255, 0.3);
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), 
-                        0 1px 0 rgba(255, 255, 255, 0.5), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.3), 
-                        0 0 40px rgba(255, 255, 255, 0.3);
-    
-    height: 50px;
-    color: #ffffff;
-    outline: none;
-    padding-left: 20px;
-    transition:         all .1s linear;
-    -moz-transition:    all .1s linear;
-    -o-transition:      all .1s linear;
-    -webkit-transition: all .1s linear;
-    font: 400 14px/18px 'Sanchez';
-    width: 95%;
-    margin-bottom:20px;
-}
-
-.text_search .tag_list:focus {
-    background: transparent;
-    background: rgba(163, 135, 106, 0.2);
-
-    box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.2), 
-                        0 1px 0 rgba(255, 255, 255, 0.7), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
-                        0 0 40px rgba(255, 255, 255, 0.5);
-    -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0, 0.2), 
-                        0 1px 0 rgba(255, 255, 255, 0.7), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
-                        0 0 40px rgba(255, 255, 255, 0.5);
-    -o-box-shadow:      inset 0 0 5px rgba(0, 0, 0, 0.2), 
-                        0 1px 0 rgba(255, 255, 255, 0.7), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
-                        0 0 40px rgba(255, 255, 255, 0.5);
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2), 
-                        0 1px 0 rgba(255, 255, 255, 0.7), 
-                        inset 0 1px 2px rgba(0, 0, 0, 0.4), 
-                        0 0 40px rgba(255, 255, 255, 0.5);
-}
-</style>
 </head>
 
 <body id="page-top" class="index">
@@ -648,9 +461,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
-                                    <div class="search_text">
-                                        <input type="text" placeholder="Search Ingredients" class="tag_list" id="tag_list1">
-                                    </div>
+                                <iframe src="test.html" style="border: 0px none;height: 300px;width: 800px;"></iframe>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">PROCEED!</button>
                             </div>
                         </div>
@@ -792,7 +603,7 @@
                                 <h2>Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                                <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. Itâ€™s a beautiful template thatâ€™s designed with the Bootstrap framework in mind.</p>
+                                <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
                                 <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                             </div>
@@ -802,72 +613,6 @@
             </div>
         </div>
     </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="jquery-ui.js"></script>
-    <script type="text/javascript">
-    $( function() {
-                                                var availableTags = [
-                                                    "ActionScript",
-                                                    "AppleScript",
-                                                    "Asp",
-                                                    "BASIC",
-                                                    "C",
-                                                    "C++",
-                                                    "Clojure",
-                                                    "COBOL",
-                                                    "ColdFusion",
-                                                    "Erlang",
-                                                    "Fortran",
-                                                    "Groovy",
-                                                    "Haskell",
-                                                    "Java",
-                                                    "JavaScript",
-                                                    "Lisp",
-                                                    "Perl",
-                                                    "PHP",
-                                                    "Python",
-                                                    "Ruby",
-                                                    "Scala",
-                                                    "Scheme"
-                                                ];
-                                                $( "#tag_list1" ).autocomplete({
-                                                    source: availableTags
-                                                });
-    });
-    $(document).on('keydown', '#tag_list1', function (e) {
-
-        if (e.keyCode == 13) {
-
-            createTag($(this).val());
-
-        }
-
-    });
-
-    $(document).on('click', '.delete', function () {
-
-        $(this).parent().remove();
-
-    });
-
-     
-
-    function createTag(text) {
-
-        if (text != '') {
-
-            var tag = $('<div class="tags">' + text + '<a class="delete"></a></div>');
-
-
-            tag.insertAfter($('#tag_list1'), $('#tag_list1'));
-
-            $('#tag_list1').val('');
-
-        }
-
-    }
-
-    </script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
