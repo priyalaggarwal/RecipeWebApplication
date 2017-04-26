@@ -129,3 +129,18 @@ def recipe_listing(request):
 	print recipes
 	return render(request, 'recipe_app/recipe_listing.html', {"recipes" : recipes })
 	# return HttpResponse('success')
+    
+def categoryresult(request):
+    q = request.GET.get('name', '')
+    recipes = Recipe.nodes.filter(category = q )[:10]
+    results = []
+    for recipe in recipes:
+        recipe_json = {}
+        recipe_json['name'] = recipe.name
+        recipe_json['image_path'] = recipe.image_path
+        recipe_json['id'] = recipe.index
+        recipe_json['description'] = recipe.description
+        results.append(recipe_json)
+    l = len(results)
+	return render(request, 'recipe_app/categoryresult.html?name='+q, {"recipes" : results })
+	# return HttpResponse('success')

@@ -89,13 +89,13 @@ DATABASES = {
 #         'ENDPOINT':'/db/data',
 #         'OPTIONS': {
 #             'username': 'neo4j',
-#             'password': 'webtech@123',
+#             'password': 'meandmyself',
 #         }
         
 #     }
 # }
 
-NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:webtech@123@localhost:7687')
+NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:meandmyself@localhost:7687')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
