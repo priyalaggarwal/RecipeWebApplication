@@ -11,9 +11,10 @@ urlpatterns = [
 	url(r'^selected_ingredients/', views.selected_ingredients, name='selected_ingredients'),
 	url(r'^recipe_detail/(?P<id>[0-9]+)/', views.recipe_detail, name='recipe_detail'),
 	url(r'^recipe_listing/', views.recipe_listing, name='recipe_listing'),
-    url(r'^categoryresult/', views.categoryresult, name='categoryresult'),
+    url(r'^categoryresult/(?P<name>[\w\-\w]+)', views.categoryresult, name='categoryresult'),
 	url(r'^search_box/', TemplateView.as_view(template_name="recipe_app/search_box.html"),
                    name='search_box'),
+	url(r'^categories/', views.all_categories, name="all_categories")
 	# the name attribute is referred in templates {% url %}
 	# url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
  #    url(r'^(?P<pk>[0-9]+)/results/$', views.ResultsView.as_view(), name='results'),

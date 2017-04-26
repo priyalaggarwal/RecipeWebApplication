@@ -28,7 +28,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Kitchen Ninja</a>
+                <a class="navbar-brand page-scroll" href="/">Kitchen Ninja</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,7 +59,7 @@
 	<div class="container" style="margin-top: 150px">
     <hgroup class="mb20">
 		<h1>Search Results</h1>
-		<h2 class="lead">Results found for the search for category: <span id="cate"></span>
+		<h2 class="lead">Results found for the search for category: <b> {{ category_name }} </b>
 		</h2>								
 	</hgroup>
 
@@ -67,10 +67,10 @@
     {% for recipe in recipes %}
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-3">
-				<a href={% url 'recipe_app:recipe_detail' id=recipe.id %} class="thumbnail"><img src="{% static 'Images/'|add:recipe.image_path %} " alt="Lorem ipsum" /></a>
+				<a href={% url 'recipe_app:recipe_detail' id=recipe.index %} class="thumbnail"><img src="{% static 'Images/'|add:recipe.image_path %} " alt="Lorem ipsum" /></a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-				<h3><a href={% url 'recipe_app:recipe_detail' id=recipe.id %}>{{ recipe.name }}</a></h3>
+				<h3><a href={% url 'recipe_app:recipe_detail' id=recipe.index %}>{{ recipe.name }}</a></h3>
 				<p>{{ recipe.description }}</p>
 			</div>
 			<span class="clearfix borda"></span>
