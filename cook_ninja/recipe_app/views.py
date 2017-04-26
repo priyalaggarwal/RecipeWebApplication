@@ -72,13 +72,18 @@ def index(request):
 def get_ingredients(request):
     if request.is_ajax():
         q = request.GET.get('term', '')
-        ingredients = Ingredient.nodes.filter(name__icontains = q )[:10]
+        query = 'match(i:Ingredient) where i.name contains {q} return(i) order by length(i.name) limit 10;'
+        ingredients, meta = db.cypher_query(query, params={"q":q})
+        # ingredients = sorted(Ingredient.nodes.filter(name__icontains = q)[:10], key=lambda o:len(o.name))
+        # print ingredients
         results = []
+        id = 0
         for ingredient in ingredients:
             ingredient_json = {}
-            ingredient_json['id'] = ingredient.id
-            ingredient_json['label'] = ingredient.name
-            ingredient_json['value'] = ingredient.name
+            ingredient_json['id'] = id
+            id += 1
+            ingredient_json['label'] = ingredient[0].properties['name']
+            ingredient_json['value'] = ingredient[0].properties['name']
             results.append(ingredient_json)
         data = json.dumps(results)
     else:
@@ -105,8 +110,6 @@ def recipe_detail(request, id):
     return render(request, 'recipe_app/recipe_detail.html', {"recipe" : recipe})
 
 def recipe_listing(request):
-
-<<<<<<< HEAD
     # ingredient_list = ["fennel","sugar","mu    stard oil"]
     ingredient_list = request.session.get('ingredient_list')
     print ingredient_list

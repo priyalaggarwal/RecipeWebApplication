@@ -147,10 +147,10 @@
     {% for recipe in recipes %}
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-3">
-				<a href={% url 'recipe_app:recipe_detail' id=recipe.index %} class="thumbnail"><img src="{% static 'Images/'|add:recipe.image_path %} " alt="Lorem ipsum" /></a>
+				<a href={% url 'recipe_app:recipe_detail' id=recipe.id %} class="thumbnail"><img src="{% static 'Images/'|add:recipe.image_path %} " alt="Lorem ipsum" /></a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-				<h3><a href={% url 'recipe_app:recipe_detail' id=recipe.index %}>{{ recipe.name }}</a></h3>
+				<h3><a href={% url 'recipe_app:recipe_detail' id=recipe.id %}>{{ recipe.name }}</a></h3>
 				<p>{{ recipe.description }}</p>
 
                 <p>Ingredients Matched: {{ recipe.no_matched }}</p>
