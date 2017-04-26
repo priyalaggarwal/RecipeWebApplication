@@ -111,11 +111,9 @@ def recipe_listing(request):
 	print ingredient_list
 	query = """ match(r:Recipe)-[:CHILD]->(i:Ingredient)
 			where i.name in {ingredient_list}
-			with r,count(*) as c
-			where c > 1
-			return *
-			order by c desc
-			limit 5"""
+            RETURN count(*) as degree,r as recipe
+            ORDER BY degree DESC
+            LIMIT 3"""
 	
 	results, meta = db.cypher_query(query, params={"ingredient_list":ingredient_list})
 	# print len(results[0])
@@ -141,6 +139,6 @@ def categoryresult(request):
         recipe_json['id'] = recipe.index
         recipe_json['description'] = recipe.description
         results.append(recipe_json)
-    l = len(results)
+    # l = len(results)
 	return render(request, 'recipe_app/categoryresult.html?name='+q, {"recipes" : results })
 	# return HttpResponse('success')
