@@ -109,10 +109,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#how">How to Use</a>
+                        <a class="page-scroll" href="FirstPage.html">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Categories</a>
+                        <a class="page-scroll" href="/categories">Categories</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
@@ -127,18 +127,28 @@
         <!-- /.container-fluid -->
     </nav>
 
-	<div class="container" style="margin-top: 150px">
-
-	<div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <iframe src="{% url 'recipe_app:search_box' %}" style="border: 0px none;height: 300px;width: 800px;"></iframe><br>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">PROCEED!</button>
-                            </div>
+	<div class="container" style="margin-top: 100px">
+<!-- <center> <a href="#search" class="page-scroll btn btn-xl" data-toggle="modal">Modify Search</a></center> -->
+<div class="portfolio-modal modal fade" id="search" tabindex="-4" role="dialog" aria-hidden="true" style="height=100%;margin:5%;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
                         </div>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row">
+                            <div class="modal-body" >
+                                <iframe src="{% url 'recipe_app:search_box' %}" style="border: 0px none;height: 300px ;width: 800px;" scrolling="no"></iframe><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <hgroup class="mb20">
 		<h1>Search Results</h1>
 	</hgroup>
