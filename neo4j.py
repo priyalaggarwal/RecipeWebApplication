@@ -3,7 +3,7 @@
 import json
 from py2neo import Graph, authenticate
  
-authenticate("localhost:7474", "neo4j", "meandmyself")
+authenticate("localhost:7474", "neo4j", "password")
 graph = Graph()
  
 with open('final_recipe.json') as data_file:
